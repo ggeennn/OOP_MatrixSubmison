@@ -1,0 +1,19 @@
+/**
+ * I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+ * Name :	Yicheng Wang
+ * Email :	ywang841@myseneca.ca
+ * Student ID :	150868206
+ * Date :	2025/1/24
+ */
+
+# Reflection on Workshop #2
+
+In this workshop, I learned several important programming concepts, including function overloading, dynamic memory allocation (DMA), and the use of compound types. These concepts are crucial in C++ programming, helping me better understand memory management and designing flexible program structures.
+
+## Learning Outcomes
+
+1. **Function Overloading**: I implemented multiple `getInt` functions that perform different operations based on parameter types and counts, enhancing code readability and flexibility.
+
+2. **Dynamic Memory Allocation**: I learned to use `new` and `delete` for dynamic memory management, particularly in the `reverse` function, which allocates an array based on user input.
+
+3. **Compound Types**: I created functions to manage its instances, improving my understanding of data organization and reference passing.
