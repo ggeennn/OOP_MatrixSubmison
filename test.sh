@@ -18,7 +18,10 @@ if [ $? -eq 0 ]; then
             # Check if correct_output.txt exists
             if [ -f "correct_output.txt" ]; then
                 echo "Comparing program output with correct_output.txt..."
-                diff program_output.txt correct_output.txt
+                dos2unix correct_output.txt
+                # Remove the last line if it is empty
+                #sed -i '' -e '$s/^[[:space:]]*$//' program_output.txt
+                diff -w -y program_output.txt correct_output.txt
                 
                 # Check if diff found any differences
                 if [ $? -eq 0 ]; then
