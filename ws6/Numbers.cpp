@@ -1,3 +1,10 @@
+/**
+ * I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+ * Name :	Yicheng Wang
+ * Email :	ywang841@myseneca.ca
+ * Student ID :	150868206
+ * Date :	2025/3/4
+ */
 #define _CRT_SECURE_NO_WARNINGS
 #include <fstream>
 #include <iostream>
@@ -24,7 +31,7 @@ namespace seneca
         if (other.m_numbers)
         {
             m_numbers = new double[m_numCount];
-            for (size_t i = 0; i < m_numCount; i++)
+            for (int i = 0; i < m_numCount; i++)
             {
                 m_numbers[i] = other.m_numbers[i];
             }
@@ -41,7 +48,7 @@ namespace seneca
             if (other.m_numbers)
             {
                 m_numbers = new double[m_numCount];
-                for (size_t i = 0; i < m_numCount; i++)
+                for (int i = 0; i < m_numCount; i++)
                 {
                     m_numbers[i] = other.m_numbers[i];
                 }
@@ -81,7 +88,7 @@ namespace seneca
                 return false;
             }
 
-            size_t i = 0;
+            int i = 0;
             while (i < m_numCount && file >> m_numbers[i])
             {
                 i++;
@@ -109,7 +116,7 @@ namespace seneca
         if (m_isOriginal && !isEmpty())
         {
             ofstream file(m_filename);
-            for (size_t i = 0; i < m_numCount; i++)
+            for (int i = 0; i < m_numCount; i++)
             {
                 file << m_numbers[i] << endl;
             }
@@ -121,7 +128,7 @@ namespace seneca
         if (!isEmpty())
         {
             double *temp = new double[m_numCount + 1];
-            for (size_t i = 0; i < m_numCount; i++)
+            for (int i = 0; i < m_numCount; i++)
             {
                 temp[i] = m_numbers[i];
             }
@@ -153,7 +160,7 @@ namespace seneca
             }
             ostr << fixed;
             ostr.precision(2);
-            for (size_t i = 0; i < m_numCount; i++)
+            for (int i = 0; i < m_numCount; i++)
             {
 
                 ostr << m_numbers[i];
