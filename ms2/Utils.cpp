@@ -1,15 +1,15 @@
 /***********************************************************************
 // OOP244 Project, Utils Module
 //
-// File	Utils.h
-// Version 0.1
+// File	Utils.cpp
+// Version 0.2
 // started by Fardad
 // Description
 // utility function to be used in the project
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
-//
+//Yicheng Wang    2025/3/14       getInt method implemented
 /////////////////////////////////////////////////////////////////
 ***********************************************************************/
 #include <iostream>
@@ -55,4 +55,51 @@ namespace seneca {
       return cstring && *cstring == 0;
    }
 
+   int Utils::getInt() {
+      int value;
+      bool valid;
+      do {
+         valid = true;
+
+         if (std::cin.peek() == '\n') {
+            std::cout << "You must enter a value: ";
+            std::cin.ignore();  // 清除换行符
+            valid = false;
+            continue;
+         }
+
+
+         std::cin >> value;
+         
+
+         if (std::cin.fail()) {
+            std::cin.clear();  
+            std::cin.ignore(1000, '\n');
+            std::cout << "Invalid integer: ";
+            valid = false;
+         }
+         else if (std::cin.peek() != '\n' && std::cin.peek() != EOF) {
+            std::cin.ignore(1000, '\n');
+            std::cout << "Only an integer please: ";
+            valid = false;
+         }
+
+         else {
+            std::cin.ignore(1000, '\n');
+         }
+      } while (!valid);
+      return value;
+   }
+
+   int Utils::getInt(int min, int max) {
+      int value;
+      do {
+         value = getInt();
+         if (value < min || value > max) {
+            std::cout << "Invalid value: [" << min << " <= value <= " 
+                      << max << "], try again: ";
+         }
+      } while (value < min || value > max);
+      return value;
+   }
 }
