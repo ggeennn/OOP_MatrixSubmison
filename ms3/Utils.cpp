@@ -63,7 +63,7 @@ namespace seneca {
 
          if (std::cin.peek() == '\n') {
             std::cout << "You must enter a value: ";
-            std::cin.ignore();  // 清除换行符
+            std::cin.ignore();  
             valid = false;
             continue;
          }
